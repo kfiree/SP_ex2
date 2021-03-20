@@ -11,42 +11,17 @@ namespace ariel
         
     }
 
-    void post(int row, int column, Direction dir, string txt){
+    void Board::post(u_int row, u_int column, Direction dir, string txt){
 
     }
 
-    string read(int row, int column, Direction dir, int len){
+    string Board::read(u_int row, u_int column, Direction dir, u_int len){
          return "";
     }
 
-    void show(){
+    // TODO make const
+    void Board::show(){
 
     }
     
-} 
-// Board {
-//     private:
-//         vector<vector<string>> board;
-//         int getRow();
-//         int getCol();
-
-//     public:
-//         // constructor
-//         Board();
-
-//         // post massage (given text, direction and location)
-//         void post(int row, int column, Direction dir, string txt);
-
-//         // read massage (given length, direction and location)
-//         string read(int row, int column, Direction dir, int len);
-
-//         void show();
-
-
-
-
-    // void post(int row, int column, Direction dir, std::string txt);
-
-    // std::string read(int row, int column, Direction dir, int len);
-
-    // void show();
+}

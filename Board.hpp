@@ -3,13 +3,16 @@
 
 #include <vector>
 #include <string>
+#include "Direction.hpp"
 
 using std::string;
 using std::vector;
+using ariel::Direction;
 
 namespace ariel{
     class Board;
 }
+
 
 class ariel::Board {
     private:

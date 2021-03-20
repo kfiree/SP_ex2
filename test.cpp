@@ -14,7 +14,7 @@ Direction v = Direction::Vertical;
 
 //post and read at a random location
 string postNread(Direction dir, string message){
-    int row =  getNum(), col = getNum();
+    u_int row =  getNum(), col = getNum();
 
     //write post
     board.post(row, col, dir, message);
@@ -29,8 +29,8 @@ void resetMessage(){
 }
 
 //get random number from range
-u_int getNum(int from, int to){
-    int range = from - to;
+u_int getNum(u_int from, u_int to){
+    u_int range = from - to;
     return (rand()%range)+to;
 }
 
@@ -77,7 +77,7 @@ TEST_CASE("Legal input") { // (37 tests)
     }
 
     // 5) read sub message (5 tests)
-    int subPostSize = 2;
+    u_int subPostSize = 2;
     resetMessage();
     string subMessage;
     for(int i = 0; i < 10; i+=subPostSize){
