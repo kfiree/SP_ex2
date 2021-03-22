@@ -13,7 +13,7 @@ namespace ariel
         
     }
 
-    void Board::post(u_int row, u_int column, Direction dir, string &txt){
+    void Board::post(u_int row, u_int column, Direction dir, const string &txt){
 
     }
 

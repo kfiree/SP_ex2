@@ -38,15 +38,16 @@ string postNread(Direction dir, string message){
 void resetMessage(){
     board.post(0, 0, h, "0123456789");
 }
-
-TEST_CASE("Legal input") { // (37 tests)
-
-
+TEST_CASE("bad input"){
     // 1) check read unUsed area (1 test)
-    CHECK(board.read(0,0,h,10) == "");
+    CHECK(board.read(0,0,h,10) == "__________");
 
     // 2) check read partly used area (1 test)
+    resetMessage();
+    CHECK(board.read(0,5,h,10) == "56789_____");
 
+}
+TEST_CASE("good input") { // (37 tests)
 
     /* 3) post and read message in several random locations (20 tests)
           10 vertical + 10 horizontal*/
