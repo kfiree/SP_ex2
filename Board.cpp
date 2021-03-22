@@ -22,6 +22,6 @@ namespace ariel
     // TODO make const
     void Board::show(){
 
-    }
+    } 
     
 }

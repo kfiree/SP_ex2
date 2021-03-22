@@ -12,6 +12,17 @@ ariel::Board board;
 Direction h = Direction::Horizontal;
 Direction v = Direction::Vertical;
 
+
+//get random number from range
+u_int getNum(u_int from, u_int to){
+    u_int range = from - to;
+    return (((u_int)rand())%range)+to;
+}
+
+u_int getNum(){
+    return getNum(0,100);
+}
+
 //post and read at a random location
 string postNread(Direction dir, string message){
     u_int row =  getNum(), col = getNum();
@@ -26,16 +37,6 @@ string postNread(Direction dir, string message){
 // post simple message at (0,0)
 void resetMessage(){
     board.post(0, 0, h, "0123456789");
-}
-
-//get random number from range
-u_int getNum(u_int from, u_int to){
-    u_int range = from - to;
-    return (rand()%range)+to;
-}
-
-u_int getNum(){
-    return getNum(0,100);
 }
 
 TEST_CASE("Legal input") { // (37 tests)
@@ -70,17 +71,17 @@ TEST_CASE("Legal input") { // (37 tests)
     */
     resetMessage();
     string messageLapping = "a";
-    for(int i = 0; i < 10; i++){
+    for(u_int i = 0; i < 10; i++){
         board.post(0, i, h, messageLapping);
-        string newMessage =  messageLapping + message.substr(i, message.length());
-        CHECK(newMessage.compare(board.read(0, 0, h, message.length())));
+        message[i]='a';
+        CHECK(message.compare(board.read(0, 0, h, message.length())));
     }
 
     // 5) read sub message (5 tests)
     u_int subPostSize = 2;
     resetMessage();
     string subMessage;
-    for(int i = 0; i < 10; i+=subPostSize){
+    for(u_int i = 0; i < 10; i+=subPostSize){
         subMessage=to_string(i)+to_string(i+1);
         CHECK(board.read(0, i, h, subPostSize) == subMessage);
     }

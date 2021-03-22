@@ -13,7 +13,7 @@ using ariel::Direction;
 #include <stdexcept>
 using namespace std;
 
-int main() {
+int main() { 
 	ariel::Board board;
 	board.post(/*row=*/100, /*column=*/200, Direction::Horizontal, "abcd");
 	cout << board.read(/*row=*/99, /*column=*/201, Direction::Vertical, /*length=*/3) << endl;  
