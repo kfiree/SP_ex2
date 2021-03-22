@@ -1,5 +1,7 @@
 #include "Board.hpp"
 #include "Direction.hpp" 
+#include <map>
+
 using std::string;
 
 
@@ -11,7 +13,7 @@ namespace ariel
         
     }
 
-    void Board::post(u_int row, u_int column, Direction dir, string txt){
+    void Board::post(u_int row, u_int column, Direction dir, string &txt){
 
     }
 

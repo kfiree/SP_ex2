@@ -25,10 +25,10 @@ class ariel::Board {
         Board();
 
         // post massage (given text, direction and location)
-        void post(u_int row, u_int column, Direction dir, string txt);
+        void post(u_int row, u_int column, Direction dir, string &txt);
 
         // read massage (given length, direction and location)
-        string read(u_int row, u_int column, Direction dir, u_int len);
+        static string read(u_int row, u_int column, Direction dir, u_int len);
 
         void show();
 };
